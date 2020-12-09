@@ -1,0 +1,57 @@
+﻿@model ProductsListViewModel
+@{
+    ViewData["Title"] = "Products";
+    Layout = "/Views/Shared/_ProductsLayout.cshtml";
+}
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap-grid.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+
+
+@for (int i = 0; i < Model.Products.Count(); i += 2)
+{
+    <div class="card-group">
+        <div class="card" style="width: 18rem; margin-right: 20px; margin-bottom: 20px;">
+            <img class="card-img-top" src="~/images/@Model.Products[i].ProductType.ProductSetId/@Model.Products[i].ProductTypeId/@Model.Products[i].Id/image.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">@Model.Products[i].Producer @Model.Products[i].ModelType.Name</h5>
+                <p class="card-text">@Model.Products[i].Info.Substring(0, 167)...</p>
+                <div style="float:right">
+                    @if (Model.IsAuth)
+                    {
+                        <a asp-action="AddToCart" asp-controller="Cart"
+                           asp-route-productId="@Model.Products[i].Id"
+                           asp-route-returnUrl="@HttpUtility.UrlEncode(ViewContext.HttpContext.Request.PathAndQuery())"
+                           class="btn btn-primary">Add to cart</a>
+                    }
+                    <a asp-action="GetProduct" asp-controller="Home"
+                       asp-route-productId="@Model.Products[i].Id"
+                       class="btn btn-info">More info</a>
+                </div>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem; margin-bottom: 20px">
+            <img class="card-img-top" src="~/images/@Model.Products[i + 1].ProductType.ProductSetId/@Model.Products[i + 1].ProductTypeId/@Model.Products[i + 1].Id/image.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">@Model.Products[i + 1].Producer @Model.Products[i + 1].ModelType.Name</h5>
+                <p class="card-text">@Model.Products[i + 1].Info.Substring(0, 167)...</p>
+                <div style="float:right; bottom: 0px">
+                    @if (Model.IsAuth)
+                    {
+                        <a asp-action="AddToCart" asp-controller="Cart"
+                           asp-route-productId="@Model.Products[i + 1].Id"
+                           asp-route-returnUrl="@HttpUtility.UrlEncode(ViewContext.HttpContext.Request.PathAndQuery())"
+                           class="btn btn-primary">Add to cart</a>
+                    }
+                    <a asp-action="GetProduct" asp-controller="Home"
+                       asp-route-productId="@Model.Products[i + 1].Id"
+                       class="btn btn-info">More info</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<div page-model="@Model.PagingInfo" page-action="GetProducts" page-classes-enabled="true"
+     page-class="btn" page-class-normal="btn-secondary"
+     page-class-selected="btn-primary" class="btn-group pull-right m-1"></div>

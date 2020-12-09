@@ -1,0 +1,14 @@
+﻿@model SideBarCategoriesInfo
+
+<div class="list-group">
+    @foreach (string category in Model.Categories)
+    {
+        <a class="list-group-item list-group-item-action @(category == Model.SelectedCategory ? "active" : "")"
+           asp-controller="Home"
+           asp-action="GetSubCategory"
+           asp-route-category="@category"
+           asp-route-productPage="1">
+            @category
+        </a>
+    }
+</div>

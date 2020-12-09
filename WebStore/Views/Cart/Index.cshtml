@@ -1,0 +1,33 @@
+﻿@model CartIndexViewModel
+@{
+    Layout = "/Views/Shared/_ProductsLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tbody>
+        @foreach (var line in Model.Cart.Lines)
+        {
+            <tr >
+                <td class="text-center"><img src="~/images/@line.Product.ProductType.ProductSetId/@line.Product.ProductTypeId/@line.Product.Id/image.jpg"></td>
+                <td class="text-left">
+                    @line.Product.Producer @line.Product.ModelType.Name
+                </td>
+                <td class="text-center">@line.Quantity</td>
+                <td class="text-center">@line.Product.Price.ToString("c")</td>
+                <td class="text-center">@((line.Quantity * line.Product.Price).ToString("c"))</td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="4" class="text-right">Total:</td>
+            <td class="text-right">
+                @Model.Cart.ComputeTotalValue().ToString("c")
+            </td>
+        </tr>
+    </tfoot>
+</table>
+<div class="text-right">
+    <a class="btn btn-primary" asp-controller="Home" asp-action="GetProducts">Continue shopping</a>
+    <a class="btn btn-info" href="#" @*asp-controller="Cart" asp-action="GetProducts"*@>Buy</a>
+</div>

@@ -1,0 +1,73 @@
+﻿@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-gap: 20px;
+        align-items: stretch;
+    }
+
+        .grid > article {
+            border: 1px solid #ccc;
+            border-radius: 5%;
+            box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.3);
+        }
+
+            .grid > article img {
+                max-width: 90%;
+                margin-left: 11px;
+            }
+
+    .text {
+        padding: 0 20px 20px;
+    }
+
+        .text > button {
+            border: 1px solid #ccc;
+            background-color: white;
+            border-radius: 8px;
+            color: black;
+            margin-top: 20px;
+            padding: 10px;
+            width: 100%;
+        }
+
+    .carousel-control-prev-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+    }
+
+    .carousel-control-next-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2300' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            @await Component.InvokeAsync("CategoriesList")
+        </div>
+        <div class="col-md-10">
+            @RenderBody()
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @RenderSection("Scripts", required: false)
+
+    <script>
+        $(function () {
+            var current = location.pathname;
+            $('.nav-tabs li a').each(function () {
+                var $this = $(this);
+                if (current.indexOf($this.attr('href')) !== -1) {
+                    $this.addClass('active');
+                }
+            })
+        })
+    </script>
+}

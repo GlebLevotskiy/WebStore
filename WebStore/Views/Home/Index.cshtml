@@ -1,0 +1,19 @@
+﻿@model IEnumerable<ProductSet>
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "/Views/Shared/_ProductsLayout.cshtml";
+}
+
+<main class="grid">
+    @foreach (var category in Model)
+    {
+        <article>
+            <img src="~/images/@category.Id/image.jpg" alt="Sample photo">
+            <form asp-controller="Home" asp-action="GetSubCategory" asp-route-category="@category.Name">
+                <div class="text">
+                    <button type="submit">@category.Name</button>
+                </div>
+            </form>
+        </article>
+    }
+</main>

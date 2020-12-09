@@ -1,0 +1,369 @@
+﻿
+﻿ /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Little products view
+*/
+
+
+
+.product-grid {
+    text-align: center;
+}
+
+    .product-grid .product-image {
+        overflow: hidden;
+        position: relative;
+    }
+
+        .product-grid .product-image:before {
+            content: "";
+            background: rgba(0,0,0,0.02);
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+        }
+
+        .product-grid .product-image img {
+            width: 100%;
+            height: auto;
+        }
+
+    .product-grid .pic-1 {
+        opacity: 1;
+        transform: rotateY(0);
+        transition: all 0.5s ease-out 0s;
+    }
+
+    .product-grid:hover .pic-1 {
+        opacity: 0;
+        transform: rotateY(-90deg);
+    }
+
+    .product-grid .pic-2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transform: rotateY(-90deg);
+        transition: all 0.5s ease-out 0s;
+    }
+
+    .product-grid:hover .pic-2 {
+        opacity: 1;
+        transform: rotateY(0deg);
+    }
+
+    .product-grid .social {
+        width: 100%;
+        background: #ededed;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+        z-index: 1;
+        transition: all 0.5s ease 0s;
+    }
+
+    .product-grid:hover .social {
+        opacity: 1;
+    }
+
+    .product-grid .social li {
+        display: inline-block;
+    }
+
+        .product-grid .social li a {
+            display: block;
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            background: #ededed;
+            font-size: 20px;
+            color: #000;
+            transition: all 0.3s ease 0s;
+        }
+
+            .product-grid .social li a:hover {
+                background: #fff;
+                color: #d15f21;
+            }
+
+    .product-grid .discount {
+        width: 100%;
+        padding: 15px;
+        background: #e4f6ff;
+        font-size: 18px;
+        font-weight: 700;
+        color: #000;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .product-grid .product-content {
+        padding: 15px 0;
+    }
+
+    .product-grid .title {
+        font-size: 20px;
+        font-weight: 600;
+        color: #000;
+        text-transform: capitalize;
+        margin: 0 0 5px 0;
+    }
+
+    .product-grid .price {
+        font-size: 16px;
+        font-weight: 600;
+        color: #d15f21;
+        margin-bottom: 5px;
+    }
+
+        .product-grid .price span {
+            display: inline-block;
+            color: #999;
+            text-decoration: line-through;
+            margin-right: 2px;
+        }
+
+    .product-grid .rating {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+        .product-grid .rating li {
+            display: inline-block;
+            font-size: 10px;
+            color: #ffc000;
+        }
+
+@media only screen and (max-width:990px) {
+    .product-grid {
+        margin-bottom: 30px;
+    }
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+div.login-logout-tab div.card-header {
+    padding: 0px 0px 12px 0px;
+}
+
+div.login-logout-tab ul.nav-tabs {
+    margin: 0px 0px -12px 0px;
+}
+
+div.login-logout-tab li.nav-item {
+    width: 50%;
+}
+
+div.login-logout-tab a.nav-link {
+    font-size: 25px;
+    text-align: center;
+    color: #495057;
+}
+
+div.card-body {
+    padding: 10px 20px;
+}
+
+div.search-tab ul.nav-tabs {
+    margin: 0px 0px -12px 0px;
+}
+
+div.search-tab li.nav-item {
+    width: 20%;
+}
+
+div.search-tab a.nav-link {
+    font-size: 15px;
+    text-align: center;
+    color: #495057;
+}
+
+.mybtn {
+    background-color: #ccc;
+    color: #fff;
+    border-radius: 3px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    width: 150px;
+    height: 36px;
+    text-align: center;
+}
+
+    .mybtn:hover {
+        border: none;
+        background: #1b6ec2;
+        box-shadow: 0px 0px 1px #777;
+    }
+
+#edit {
+    margin-left: 200%;
+    height: 30px;
+}
+
+#buy {
+    width: 80px;
+    height: 30px;
+}
+
+#tickets-table {
+    width: 100%;
+}
+
+    #tickets-table th, td {
+        padding: 7px;
+    }
+
+    #tickets-table tbody tr:nth-child(even) {
+        background: #F4F6F6;
+    }
+
+div.person-tab {
+    padding-bottom: 20px;
+}
+
+    div.person-tab li.nav-item {
+        width: 50%;
+    }
+
+div.person-row {
+    margin-bottom: 20px;
+}
+
+td.td-person {
+    width: 30%;
+}
+
+div.ticket-card-column {
+    margin-left: 1%;
+}
+
+div.ticket-tab {
+    margin-bottom: 20px;
+}
+
+td.td-time {
+    font-size: 32px;
+}
+
+td.td-info {
+    vertical-align: bottom;
+    padding-bottom: 12px;
+}
+
+.price-lbl {
+    margin-right: 5%;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.ticket-card-column {
+    padding-top: 23px;
+    padding-left: 4%;
+    margin-bottom: 20px;
+}
+
+.ticket-user-column {
+    margin: 10px 0 10px 20px;
+}
+
+i {
+    color: grey;
+}
+
+    i.fa-plane {
+        margin-right: 10px;
+    }
+
+.tickets-label {
+    vertical-align: central;
+    margin-left: 10px;
+}
+
+.label-up {
+    margin-bottom: 0;
+}
+
+#login-ul li.nav-item {
+    margin-left: 10px;
+}

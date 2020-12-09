@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "/Views/Shared/_ProductsLayout.cshtml";
+}
+<h1>
+    Contact Numbers
+</h1>
+<img src="~/images/logos/a1.jpg" style="float:left"><h3>+375445667214</h3>
+<img src="~/images/logos/mts.jpg" style="float:left"><h3>+375335667214</h3>
+<img src="~/images/logos/life.jpg" style="float:left"><h3>+375295667214</h3>
+
+<div class="mapouter">
+    <div class="gmap_canvas">
+        <iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=%D0%BE%D0%BA%D1%82%D1%8F%D0%B1%D1%80%D1%8C%D1%81%D0%BA%D0%B0%D1%8F%2010&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+    </div>
+<style>
+    .mapouter {
+        position: relative;
+        text-align: right;
+        height: 500px;
+        width: 100%;
+    }
+
+    .gmap_canvas {
+        overflow: hidden;
+        background: none !important;
+        height: 500px;
+        width: 100%;
+    }
+</style>
+</div>
